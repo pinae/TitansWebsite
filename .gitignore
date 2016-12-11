@@ -90,3 +90,9 @@ ENV/
 
 # PyCharm project files
 .idea/
+
+# Staticfiles folder
+TitansWebsite/static/*
+
+# Database file
+TitansWebsite/db.sqlite3
