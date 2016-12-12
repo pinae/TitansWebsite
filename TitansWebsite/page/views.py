@@ -20,11 +20,11 @@ def get_page(request, path):
             author_name = request.user.first_name + request.user.last_name
             if not author_name:
                 author_name = request.user.username
+            return HttpResponse(json.dumps({
+                'author': author_name,
+                'text': ''
+            }), content_type='application/json')
         except AttributeError:
-            author_name = "Anonymous"
-        return HttpResponse(json.dumps({
-            'author': author_name,
-            'text': '',
-            'created_at': None,
-            'modified_at': None
-        }), content_type='application/json')
+            return HttpResponse(json.dumps({
+                'error': 'The page ' + path + ' does not exist.'
+            }), status=401, content_type='application/json')
