@@ -10,9 +10,9 @@ var TitansApp = angular.module(
     ]
 ).config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider.
-        when('/', {templateUrl: '/static/partials/index.html', controller: 'pageCtrl'}).
+        when('/', {templateUrl: '/static/partials/page.html', controller: 'pageCtrl'}).
         when('/error/', {templateUrl: '/static/partials/error.html', controller: 'pageCtrl'}).
-        otherwise({templateUrl: '/static/partials/index.html', controller: 'pageCtrl'});
+        otherwise({templateUrl: '/static/partials/page.html', controller: 'pageCtrl'});
     // use the HTML5 History API
     $locationProvider.html5Mode(true);
 }]);

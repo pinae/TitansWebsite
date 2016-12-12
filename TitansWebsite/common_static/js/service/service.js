@@ -3,11 +3,10 @@
 angular.module('BackendService', [])
     .factory('Backend', function ($http) {
         return {
-            loadText: function (id, resultData) {
+            getPage: function (path) {
                 return $http({
-                    method: "POST",
-                    url: '/loadText',
-                    data: 'id=' + id + '&result_data=' + angular.toJson(resultData),
+                    method: "GET",
+                    url: '.page/get_page/' + path.replace(/^\/+/g, ''),
                     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                 });
             }
